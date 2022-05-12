@@ -9,6 +9,15 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+
+    </header>
+    <main>
+        <!-- <h1>Hello world</h1> -->
+        <p id="countdown">10:00</p>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>
