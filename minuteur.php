@@ -13,8 +13,28 @@
 
     </header>
     <main>
-        <!-- <h1>Hello world</h1> -->
-        <p id="countdown">10:00</p>
+        <section id="minuteurs">
+            <h2>La Minuteries su siècle</h2>
+            <!-- data-time = ISO-8601 car facilement compréhensible par méthode parse du navigateurs -->
+            <div class="numbers" id="countdown" data-time = "2022-05-22T20:12:42+0000">
+                <div class="bloc">
+                    <strong id="days"></strong>
+                    <em>Jours</em>
+                </div>
+                <div class="bloc">
+                    <strong id="hours"></strong>
+                    <em>Heures</em>
+                </div>
+                <div class="bloc">
+                    <strong id="minutes"></strong>
+                    <em>Minutes</em>
+                </div>
+                <div class="bloc">
+                    <strong id="seconds"></strong>
+                    <em>Secondes</em>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
 
