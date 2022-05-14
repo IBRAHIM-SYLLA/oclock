@@ -40,6 +40,13 @@ document.addEventListener("DOMContentLoaded", function (){
         window.setTimeout(() =>{
             window.requestAnimationFrame(refreshCountdown)
         }, 1000);
+        let stop = document.querySelector('#stop')
+
+        stop.addEventListener('click', function (event){
+            event.preventDefault();
+            clearInterval(updateDom);
+            console.log('stop');
+        })
     }
 
     refreshCountdown();
@@ -60,5 +67,5 @@ document.addEventListener("DOMContentLoaded", function (){
         // sauvegarde la new version
         previousDiff = diff;
     }
-    // On va envoyer cet objet a une fonction qui mettra à jour l'HTML
+    // pour mettre en pause le minuteurs
 })
