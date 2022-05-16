@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (){
     setInterval(updateClock, 1000);
     function updateClock(){
-        let now = new Date();
-        let dname = now.getDay(),
+        const now = new Date();
+        const dname = now.getDay(),
             mo = now.getMonth(),
             dnum = now.getDate(),
             yr = now.getFullYear(),
@@ -11,17 +11,15 @@ document.addEventListener("DOMContentLoaded", function (){
             sec = now.getSeconds(),
             pe = "AM";
 
-        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        let week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Sunday"];
-        let ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
-        let values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Sunday"];
+        const ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+        const values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
         for(let i = 0; i < ids.length; i++)
         document.getElementById(ids[i]).firstChild.nodeValue = values[i];
         // window.setInterval("updateClock()", 1);
     }
 
-    // function initClock(){
         updateClock();
-    // }
     
 })
