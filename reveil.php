@@ -26,8 +26,8 @@
                 <input type="datetime-local" name="alarmTime" id="alarmTime">
                 <div class="controls">
                     <button class="set-alarm">Set alarm</button>
-                    <button class="clear-alarm">Clear alarm</button>
-                    <button class="clear-all">Clear All</button>
+                    <!-- <button class="clear-alarm">Clear alarm</button> -->
+                    <!-- <button class="clear-all">Clear All</button> -->
                 </div>
         </div>
         <div id="alarm-list"></div>

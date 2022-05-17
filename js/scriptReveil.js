@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (){
-    const audio = new Audio('audio/Bell.mp3');
+    const audio = new Audio('audio/Musique dentrée - Olympique De Marseille.mp3');
     audio.loop = true;
     let inputdate = document.querySelector('#alarmTime');
     let setAlarmButton = document.querySelector('.set-alarm');
@@ -32,7 +32,9 @@ document.addEventListener("DOMContentLoaded", function (){
 
     function setAlarmTime(inputdate){
         alarmTime = inputdate.value;
-        // console.log(alarmTime);
+        let alarmTable = [];
+        alarmTable.push(alarmTime);
+        console.log(alarmTable);
     }
 
     function setAlarm(){
@@ -64,27 +66,25 @@ document.addEventListener("DOMContentLoaded", function (){
         let li = document.createElement('li');
         let number = document.createElement('span');
         let alarmItem = document.createElement("span");
-
+        let buttonClearAlarm = document.createElement("button");
+        // buttonClearAlarm.setAttribute("class", "supprime-alarm");
+        buttonClearAlarm.textContent = 'Clear';
+        buttonClearAlarm.style.height = "20px";
+        buttonClearAlarm.style.width = "50px";
         number.innerText = `${++numberList}`;
         alarmItem.innerHTML = `${alarmTime}`;
 
-        li.append(number, alarmItem);
+        li.append(number, alarmItem, buttonClearAlarm);
         ul.append(li);
         alarmList.append(ul);
-        console.log('alarmItem');
 
-        clearAllButton.classList.remove("hidden");
+        buttonClearAlarm.addEventListener("click", function(e) {
+            li.remove();
+            clearAlarm();
+        });
     }
-
-    function clearAll() {
-        alarmList.innerHTML = '';
-        alarmList.append(clearAllButton);
-        clearAllButton.classList.add("hidden");
-        lapItem = 0;
-    }
-
     setAlarmButton.addEventListener('click', setAlarm);
-    clearAlarmButton.addEventListener('click', clearAlarm);
-    clearAllButton.addEventListener('click', clearAll);
-        updateClock();
+    // clearAlarmButton.addEventListener('click', clearAlarm);
+    // clearAllButton.addEventListener('click', clearAll);
+    updateClock();
 })
