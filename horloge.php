@@ -24,13 +24,10 @@
                 <span id="hour">00</span>:
                 <span id="minutes">00</span>:
                 <span id="seconds">00</span>
-                <span id="period">AM</span>
+                <span id="period">PM</span>
             </div>
         </div>
-        <!-- <script></script> -->
     </main>
-    <footer>
-
-    </footer>
+    <?php require_once 'footer.php'; ?>
 </body>
 </html>

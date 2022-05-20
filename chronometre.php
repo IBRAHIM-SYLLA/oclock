@@ -14,8 +14,8 @@
             <div class="watch">
                 <div class="outer-circle">
                     <div class="inner-circle">
-                        <span class="text minute">0 :</span>
-                        <span class="text sec">&nbsp; 0 :</span>
+                        <span class="text minute">0 : </span>
+                        <span class="text sec">&nbsp; 0 : </span>
                         <span class="text msec">&nbsp; 0</span>
                     </div>
                 </div>
@@ -30,5 +30,6 @@
             </ul>
         </section>
     </main>
+    <?php require_once 'footer.php'; ?>
 </body>
 </html>

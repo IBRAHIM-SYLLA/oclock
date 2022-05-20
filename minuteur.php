@@ -38,8 +38,6 @@
             <button id="stop"><i class="fa-solid fa-pause"></i></button>
         </section>
     </main>
-    <footer>
-
-    </footer>
+    <?php require_once 'footer.php'; ?>
 </body>
 </html>

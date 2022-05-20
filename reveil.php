@@ -21,9 +21,11 @@
                 <span id="hour">00</span>:
                 <span id="minutes">00</span>:
                 <span id="seconds">00</span>
-                <span id="period">AM</span>
+                <span id="period">PM</span>
             </div>
+                <p id="endAlarmText"></p>
                 <input type="datetime-local" name="alarmTime" id="alarmTime">
+                <input type="text" name="textAlarm" id="textAlarm">
                 <div class="controls">
                     <button class="set-alarm">Set alarm</button>
                     <!-- <button class="clear-alarm">Clear alarm</button> -->
@@ -32,5 +34,6 @@
         </div>
         <div id="alarm-list"></div>
     </main>
+    <?php require_once 'footer.php'; ?>
 </body>
 </html>

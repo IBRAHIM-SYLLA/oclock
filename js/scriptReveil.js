@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function (){
     const audio = new Audio('audio/Musique dentrée - Olympique De Marseille.mp3');
     audio.loop = true;
     let inputdate = document.querySelector('#alarmTime');
+    let inputText = document.querySelector('#textAlarm');
+    let endAlarmText = document.querySelector('#endAlarmText');
     let setAlarmButton = document.querySelector('.set-alarm');
-    let clearAlarmButton = document.querySelector('.clear-alarm');
-    let clearAllButton = document.querySelector('.clear-all');
     let alarmTime = null;
     let alarmTimout = null;
     let numberList = 0;
@@ -34,23 +34,26 @@ document.addEventListener("DOMContentLoaded", function (){
         alarmTime = inputdate.value;
         let alarmTable = [];
         alarmTable.push(alarmTime);
-        console.log(alarmTable);
+        console.log(alarmTime);
     }
 
     function setAlarm(){
-        if(alarmTime){
+
             const current = new Date();
             const timeToAlarm = new Date(alarmTime);
 
             if(timeToAlarm > current){
+                endAlarmText.textContent = '';
                 let timeout = timeToAlarm.getTime() - current.getTime();
-                alarmTimout = setTimeout(() => audio.play(), timeout);
+                alarmTimout = setTimeout(() => audio.play(), timeout, endAlarmText.textContent = 'end time');
                 alert('alarm set');
                 alarmListItem();
+                console.log(timeout);
             }
-        }
+            else if(timeToAlarm < current) {
+                endAlarmText.textContent = 'end time';
+            }
     }
-    // console.log(alarmTime);
 
     function clearAlarm(){
         audio.pause();
@@ -67,14 +70,16 @@ document.addEventListener("DOMContentLoaded", function (){
         let number = document.createElement('span');
         let alarmItem = document.createElement("span");
         let buttonClearAlarm = document.createElement("button");
-        // buttonClearAlarm.setAttribute("class", "supprime-alarm");
+
         buttonClearAlarm.textContent = 'Clear';
+        li.style.color = 'white';
         buttonClearAlarm.style.height = "20px";
         buttonClearAlarm.style.width = "50px";
-        number.innerText = `${++numberList}`;
-        alarmItem.innerHTML = `${alarmTime}`;
+        number.innerText = `#${++numberList}  `;
+        alarmItem.innerHTML = `${alarmTime}  `;
+        let tempActuel = new Date();
 
-        li.append(number, alarmItem, buttonClearAlarm);
+        li.append(number, alarmItem, inputText.value, buttonClearAlarm);
         ul.append(li);
         alarmList.append(ul);
 
@@ -84,7 +89,5 @@ document.addEventListener("DOMContentLoaded", function (){
         });
     }
     setAlarmButton.addEventListener('click', setAlarm);
-    // clearAlarmButton.addEventListener('click', clearAlarm);
-    // clearAllButton.addEventListener('click', clearAll);
     updateClock();
 })
